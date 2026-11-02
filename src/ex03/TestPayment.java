@@ -130,6 +130,7 @@ class Payment implements Ipo {
 		int deptNum = Integer.parseInt(li[4].trim());
 		
 		p = new PaymentDto(num, name, hireDate, salary, deptNum);
+		in.close();
 	}
 
 	@Override
