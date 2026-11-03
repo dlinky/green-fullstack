@@ -1,0 +1,70 @@
+# ===== 강의자료 / 강사 코드 (내 코드 아님) =====
+**/docs/
+01.java/sample/
+
+# ===== 비밀 정보 =====
+.env
+.env.*
+!.env.example
+**/application-secret.*
+**/*secret*.properties
+
+# ===== 배포 자료·데이터 파일 (소스 아님) =====
+*.zip
+*.pdf
+*.xlsx
+*.xls
+*.hwp
+*.pptx
+01.java/src/Prj04/zipcode_*/
+
+# ===== Eclipse / STS =====
+.metadata/
+**/.metadata/
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+.classpath
+.project
+.settings/
+.factorypath
+.apt_generated
+.springBeans
+.sts4-cache/
+
+# ===== IntelliJ =====
+.idea/
+*.iml
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+# ===== VS Code =====
+.vscode/
+
+# ===== 빌드 결과 (Java, 나중에 Spring 대비) =====
+*.class
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+*.war
+build/
+target/
+.gradle/
+
+# ===== 프론트엔드 (나중에 대비) =====
+node_modules/
+dist/
+.next/
+.vite/
+*.log
+npm-debug.log*
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== 통합 작업용 백업 =====
+_old-git/
+merge-repos.ps1
+merge-repos.bat
