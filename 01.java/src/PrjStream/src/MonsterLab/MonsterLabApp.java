@@ -36,6 +36,18 @@ public class MonsterLabApp {
                     clearConsole();
                     showMonsterClassGuide();
                     break;
+                case "3":
+                    clearConsole();
+                    showStreamList();
+                    break;
+                case "4":
+                    clearConsole();
+                    showStrongMonsters();
+                    break;
+                case "5":
+                    clearConsole();
+                    showRareMonsters();
+                    break;
                 case "0":
                     running = false;
                     System.out.println("연구소를 종료합니다.");
@@ -86,6 +98,9 @@ public class MonsterLabApp {
                 --------------- 연구소 메뉴 ---------------
                 1. 몬스터 도감 보기
                 2. 몬스터 클래스 알아보기
+                3. 몬스터 한 마리씩 관찰하기
+                4. 강한 몬스터 찾기
+                5. 희귀 몬스터 찾기
                 0. 연구소 종료
                 ------------------------------------------""");
     }
@@ -94,5 +109,21 @@ public class MonsterLabApp {
         for (int i=0; i<80; i++) {
             System.out.println();
         }
+    }
+
+    private static void showStreamList() {
+        System.out.println("\n[Stream으로 몬스터 관찰]");
+        monsters.stream().forEach(monster -> System.out.println(monster.getName()));
+        System.out.printf("총 %d마리\n", monsters.size());
+    }
+
+    private static void showStrongMonsters() {
+        System.out.println("\n[Stream으로 level>=10인 몬스터 찾기]");
+        monsters.stream().filter(monster -> monster.getLevel()>=10).forEach(monster -> System.out.println(monster.getName()));
+    }
+
+    private static void showRareMonsters() {
+        System.out.println("\n[Stream으로 grade='희귀'인 몬스터 찾기]");
+        monsters.stream().filter(monster -> monster.getGrade().equals("희귀")).forEach(monster -> System.out.println(monster.getName()));
     }
 }
