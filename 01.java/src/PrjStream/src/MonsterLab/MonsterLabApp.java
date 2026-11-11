@@ -1,0 +1,98 @@
+package MonsterLab;
+import java.util.*;
+
+public class MonsterLabApp {
+    public static final Scanner scanner = new Scanner(System.in);
+
+    // 몬스터 목록
+    private static final List<Monster> monsters = List.of(
+            new MonsterLab.Monster("슬라임", "일반", 3, 100, "물"),
+            new MonsterLab.Monster("불꽃이", "희귀", 8, 350, "불"),
+            new MonsterLab.Monster("버섯돌이", "일반", 5, 180, "풀"),
+            new MonsterLab.Monster("꼬마드래곤", "전설", 20, 1500, "불"),
+            new MonsterLab.Monster("얼음토끼", "희귀", 12, 700, "얼음"),
+            new MonsterLab.Monster("돌멩이", "일반", 2, 80, "땅")
+    );
+
+    static void main() {
+        System.out.println("""
+                ========================================
+                       🐻 나만의 몬스터 연구소 CH02
+                ========================================
+                """);
+
+        boolean running = true;
+        while (running) {
+            printMenu();
+            System.out.print("메뉴 번호를 입력해 주세요: ");
+            String choice = scanner.nextLine().trim();
+
+            switch (choice) {
+                case "1":
+                    clearConsole();
+                    showMonsterList();
+                    break;
+                case "2":
+                    clearConsole();
+                    showMonsterClassGuide();
+                    break;
+                case "0":
+                    running = false;
+                    System.out.println("연구소를 종료합니다.");
+                    break;
+                default:
+                    System.out.println("메뉴 번호를 다시 확인해 주세요.");
+            }
+
+            if (running) {
+                System.out.print("\n메뉴로 돌아가려면 Enter를 눌러 주세요.");
+                scanner.nextLine();
+                clearConsole();
+            }
+        }
+        scanner.close();
+    }
+
+    private static void showMonsterClassGuide() {
+        System.out.println("""
+                
+                [Monster 클래스 알아보기]
+                Monster는 몬스터 한 마리를 만들기 위한 설계도입니다.
+                필드 : name, grade, level, exp, element
+                생성자 : new Monster(이름, 등급, 레벨, 경험치, 속성
+                Getter : getName(), getGrade(), getLevel(), getExp(), getElement()
+                
+                [설계도로 만든 객체 예시]
+                이름 | 등급 | 레벨 | 경험치 | 속성
+                ------------------------------""");
+        System.out.println(monsters.getFirst().getInfo());
+        System.out.println("\n추가로 체력, 공격력, 방어력, 특수 기술을 넣어 확장할 수 있습니다.");
+    }
+
+    private static void showMonsterList() {
+        System.out.println("""
+                
+                [전체 몬스터 도감]
+                이름 | 등급 | 레벨 | 경험치 | 속성
+                ------------------------------""");
+        for (Monster monster : monsters) {
+            System.out.println(monster.getInfo());
+        }
+        System.out.printf("총 %d마리\n", monsters.size());
+    }
+
+    private static void printMenu() {
+        System.out.println("""
+                --------------- 연구소 메뉴 ---------------
+                1. 몬스터 도감 보기
+                2. 몬스터 클래스 알아보기
+                0. 연구소 종료
+                ------------------------------------------""");
+    }
+
+    private static void clearConsole() {
+        for (int i=0; i<80; i++) {
+            System.out.println();
+        }
+    }
+}
