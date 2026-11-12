@@ -53,10 +53,18 @@ public class MonsterLabApp {
                     showNameLabels();
                     break;
                 case "7":
+                    clearConsole();
                     showSortedNames();
                     break;
                 case "8":
+                    clearConsole();
                     showStatistics();
+                    break;
+                case "9":
+                    clearConsole();
+                    break;
+                case "10":
+                    clearConsole();
                     break;
                 case "0":
                     running = false;
@@ -114,6 +122,8 @@ public class MonsterLabApp {
                 6. 몬스터 이름표 만들기
                 7. 이름순 도감 보기
                 8. 연구 통계 보기
+                9. 강한 몬스터 목록 만들기
+                10. 최종 연구 보고서
                 0. 연구소 종료
                 ------------------------------------------""");
     }
@@ -162,5 +172,41 @@ public class MonsterLabApp {
                 희귀 몬스터 : %d마리
                 총 경험치 : %d
                 """, totalCount, rareCount, totalExp);
+    }
+
+    private static void showStrongList() {
+        List<String> strongNames = monsters.stream()
+                .filter(monster -> monster.getLevel() >= 10)
+                .map(monster -> monster.getName())
+                .toList();
+        System.out.println("\n[새로운 강한 몬스터 목록]");
+        System.out.println(strongNames);
+    }
+
+    private static void showFinalReport() {
+
+        System.out.printf("""
+                ========== 몬스터 연구 보고서 ==========
+                [전체 몬스터]
+                """);
+        monsters.stream().forEach(monster -> System.out.println(monster.getInfo()));
+
+        System.out.println("\n[레벨 10 이상 몬스터]");
+        monsters.stream().filter(monster -> monster.getLevel() >= 10)
+                .map(monster -> monster.getName())
+                .sorted().forEach(name -> System.out.println(name));
+
+        long rareCount = monsters.stream()
+                .filter(monster -> monster.getGrade().equals("희귀"))
+                .count();
+        long totalExp = monsters.stream()
+                .mapToInt(monster -> monster.getExp()).sum();
+
+        System.out.printf("""
+                
+                희귀 몬스터 : %d마리
+                총 경험치 : %d
+                ========================================
+                """);
     }
 }
