@@ -17,7 +17,7 @@ public class MonsterLabApp {
     static void main() {
         System.out.println("""
                 ========================================
-                       🐻 나만의 몬스터 연구소 CH05
+                       🐻 나만의 몬스터 연구소 CH06
                 ========================================
                 """);
 
@@ -54,6 +54,9 @@ public class MonsterLabApp {
                     break;
                 case "7":
                     showSortedNames();
+                    break;
+                case "8":
+                    showStatistics();
                     break;
                 case "0":
                     running = false;
@@ -109,6 +112,8 @@ public class MonsterLabApp {
                 4. 강한 몬스터 찾기
                 5. 희귀 몬스터 찾기
                 6. 몬스터 이름표 만들기
+                7. 이름순 도감 보기
+                8. 연구 통계 보기
                 0. 연구소 종료
                 ------------------------------------------""");
     }
@@ -133,6 +138,7 @@ public class MonsterLabApp {
         System.out.println("\n[희귀 몬스터]");
         monsters.stream().filter(monster -> monster.getGrade().equals("희귀")).forEach(monster -> System.out.println(monster.getName()));
     }
+
     private static void showNameLabels() {
         System.out.println("\n[몬스터 이름표]");
         monsters.stream().map(monster -> "몬스터: "+monster.getName()).forEach(label -> System.out.println(label));
@@ -142,5 +148,19 @@ public class MonsterLabApp {
         System.out.println("\n[이름순 도감]");
         monsters.stream().map(monster -> monster.getName())
                 .sorted().forEach(name -> System.out.println(name));
+    }
+
+    private static void showStatistics() {
+        long totalCount = monsters.stream().count();
+        long rareCount = monsters.stream().filter(monster -> monster.getGrade().equals("희귀")).count();
+        int totalExp = monsters.stream().mapToInt(monster -> monster.getExp()).sum();
+
+        System.out.printf("""
+                
+                [연구 통계]
+                전체 몬스터 : %d마리
+                희귀 몬스터 : %d마리
+                총 경험치 : %d
+                """, totalCount, rareCount, totalExp);
     }
 }
