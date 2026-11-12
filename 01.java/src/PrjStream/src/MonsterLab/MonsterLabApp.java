@@ -17,7 +17,7 @@ public class MonsterLabApp {
     static void main() {
         System.out.println("""
                 ========================================
-                       🐻 나만의 몬스터 연구소 CH02
+                       🐻 나만의 몬스터 연구소 CH05
                 ========================================
                 """);
 
@@ -47,6 +47,13 @@ public class MonsterLabApp {
                 case "5":
                     clearConsole();
                     showRareMonsters();
+                    break;
+                case "6":
+                    clearConsole();
+                    showNameLabels();
+                    break;
+                case "7":
+                    showSortedNames();
                     break;
                 case "0":
                     running = false;
@@ -101,6 +108,7 @@ public class MonsterLabApp {
                 3. 몬스터 한 마리씩 관찰하기
                 4. 강한 몬스터 찾기
                 5. 희귀 몬스터 찾기
+                6. 몬스터 이름표 만들기
                 0. 연구소 종료
                 ------------------------------------------""");
     }
@@ -114,16 +122,25 @@ public class MonsterLabApp {
     private static void showStreamList() {
         System.out.println("\n[Stream으로 몬스터 관찰]");
         monsters.stream().forEach(monster -> System.out.println(monster.getName()));
-        System.out.printf("총 %d마리\n", monsters.size());
     }
 
     private static void showStrongMonsters() {
-        System.out.println("\n[Stream으로 level>=10인 몬스터 찾기]");
+        System.out.println("\n[레벨 10 이상 몬스터]");
         monsters.stream().filter(monster -> monster.getLevel()>=10).forEach(monster -> System.out.println(monster.getName()));
     }
 
     private static void showRareMonsters() {
-        System.out.println("\n[Stream으로 grade='희귀'인 몬스터 찾기]");
+        System.out.println("\n[희귀 몬스터]");
         monsters.stream().filter(monster -> monster.getGrade().equals("희귀")).forEach(monster -> System.out.println(monster.getName()));
+    }
+    private static void showNameLabels() {
+        System.out.println("\n[몬스터 이름표]");
+        monsters.stream().map(monster -> "몬스터: "+monster.getName()).forEach(label -> System.out.println(label));
+    }
+
+    private static void showSortedNames() {
+        System.out.println("\n[이름순 도감]");
+        monsters.stream().map(monster -> monster.getName())
+                .sorted().forEach(name -> System.out.println(name));
     }
 }
