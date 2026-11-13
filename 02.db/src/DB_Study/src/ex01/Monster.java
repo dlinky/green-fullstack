@@ -23,4 +23,15 @@ public class Monster {
     public int getLevel() {return level;}
     public int getExp() {return exp;}
     public String getElement() {return element;}
+
+    public String getInfo() {
+        return "Monster{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", grade='" + grade + '\'' +
+                ", level=" + level +
+                ", exp=" + exp +
+                ", element='" + element + '\'' +
+                '}';
+    }
 }
