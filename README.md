@@ -5,3 +5,5 @@
 | 폴더 | 과목 |
 | --- | --- |
 | `01.java/src/` | Java 기초·객체지향 |
+| `02.db/src/` | DB 기초 |
+| `03.web/src/` | html/css/js 기초 |
