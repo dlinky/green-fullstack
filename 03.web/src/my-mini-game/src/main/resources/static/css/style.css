@@ -9,7 +9,7 @@ main {
 	width: 100%; max-width: 520px; padding: 30px; text-align: center;
 	background-color: white; border-radius: 16px;
 }
-.score { font-size: 56px; font-weight: bold; color: #249b80; }
+#score { font-size: 56px; font-weight: bold; color: #249b80; }
 .button-row { display: flex; justify-content: center; gap: 12px; }
 
 button {
