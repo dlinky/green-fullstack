@@ -7,11 +7,17 @@ body {
 }
 main {
 	width: 100%; max-width: 520px; padding: 30px; text-align: center;
+	display: flex; flex-direction: column; justify-content: center; align-items: center;
 	background-color: white; border-radius: 16px;
 }
+.title { margin: 0.5em 0; }
 #score { font-size: 56px; font-weight: bold; color: #249b80; }
 .button-row { display: flex; justify-content: center; gap: 12px; }
-
+.home-btn{
+	display: inline-block; margin-left: auto; padding: 13px 20px; border: 0; border-radius: 12px;
+	background-color: lightblue; color: white; cursor: pointer; font-size: 16px;
+	text-decoration: none;
+}
 button {
 	padding: 13px 20px; border: 0; border-radius: 12px;
 	background-color: #69b8e8; cursor: pointer; font-size: 16px;

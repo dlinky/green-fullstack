@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>미니 퀴즈 게임</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/game.js" defer></script>
+</head>
+<body>
+	<main class="game-shell">
+		<header class="game-top">
+			<h1>미니 퀴즈 게임</h1>
+			<p>문제를 읽고 정답을 선택해 보세요.</p>
+		</header>
+		
+		<section id="gameScreen" class="game-panel">
+			<div class="score=line">
+				<span>문제 <strong id="progressText">1 / 5</strong></span>
+				<span>점수 <strong id="score">0</strong>점</span>
+			</div>
+			
+			<div class="progress-track">
+				<div id="progressBar" class="progress-bar"></div>
+			</div>
+			
+			<div id="question" class="question-box">문제가 여기에 표시됩니다.</div>
+			<div id="options" class="options"></div>
+			<p id="feedback" class="message">보기 중 하나를 선택해 주세요.</p>
+			<button id="nextButton" hidden>다음 문제</button>
+		</section>
+		
+		<section id="resultScreen" class="result-screen" hidden>
+			<h2>게임이 끝났습니다!</h2>
+			<p id="finalScore">0점 / 50점</p>
+			<p id="resultMessage"></p>
+			<button id="restartButton">다시 도전</button>
+		</section>
+	</main>
+</body>
+</html>

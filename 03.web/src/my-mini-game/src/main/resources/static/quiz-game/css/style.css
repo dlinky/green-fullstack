@@ -1,0 +1,40 @@
+.game-shell {
+	max-width: 720px;
+	margin: 30px auto;
+	padding: 20px;
+}
+
+.game-panel, .result-screen {
+	background: #ffffff; border: 1px solid #dce5ec; border-radius: 18px;
+	padding: 24px;
+}
+
+.score-line {
+	display: flex; justify-content: space-between;
+	gap: 12px;
+}
+
+.question-box {
+	background-color: #edf5e8;
+	padding: 20px;
+	margin: 18px 0;
+	border-radius: 14px;
+	font-weight: bold;
+}
+
+.options {
+	display: grid;
+	gap: 10px;
+}
+
+.option-button {
+	width: 100%;
+	padding: 14px;
+	text-align: left;
+	border: 2px solid #dce5ec; border-radius: 12px;
+	background-color: white;
+}
+
+@media (max-width: 600px) {
+	.score-line {flex-direction: column;}
+}
