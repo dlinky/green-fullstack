@@ -16,12 +16,6 @@
 			<section class="todo-box">
 				<h3 class="todo-title">오늘의 할 일 목록</h3>
 				<div class="todo-list">
-					<div class="todo">
-						<p class="todo-name">빨래하기</p>
-						<button class="todo-btn" id="done-btn">✅</button>
-						<button class="todo-btn" id="del-btn">❌</button>
-						
-					</div>
 				</div>
 				<div class="add-todo">
 					<button class="add-btn">할 일 추가하기</button>
@@ -31,7 +25,7 @@
 				</div>
 				<div class="progress">
 					<div class="progress-bar"></div>					
-					<span class="progress-text">오늘의 할 일 완료율 : 0%</span>					
+					<span class="progress-text">오늘의 할 일 완료율 : <span class="progress-rate"></span>%</span>					
 				</div>
 				
 			</section>
@@ -40,7 +34,7 @@
 				<textarea class="memo" name="memo" placeholder=""></textarea>
 				<div class="memo-btns">
 					<button id="save-memo">저장</button>
-					<button id="clear-memo">삭제</button>	
+					<button id="clear-memo">지우기</button>	
 				</div>
 			</section>
 		</main>
