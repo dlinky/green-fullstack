@@ -1,0 +1,201 @@
+/* 페이지 전체 공통 요소*/
+:root {
+	--green: #287a5b;
+	--green-dark: #1f6047;
+	--green-light: #e8f4ee;
+	--ink: #24332d;
+	--muted: #78857f;
+	--line: #e5ece8;
+	--surface: #ffffff;
+	--background: #f4f8f5;
+	--danger: #c45454;
+	font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+h1, h2, p { margin-top: 0; }
+
+h1 { margin-bottom: 10px; }
+
+strong { font-size: 30px; }
+
+button, input, textarea { font: inherit; }
+
+button { cursor: pointer; }
+
+.eyebrow, .today-label {
+	margin: 0 0 9px;
+	color: var(--green);
+	font-size: 11px; font-weight: 800; letter-spacing: 1.7px;
+}
+.subtitle { color: var(--muted);}
+
+
+
+body {
+	margin: 0;
+	color: var(--ink);
+	background:
+		radial-gradient(circle at 90% 10%, #e7f4eb 0, transparent 28rem),
+		var(--background);
+}
+
+.page {
+	width: min(1120px, calc(100% - 40px));
+	margin: 0 auto;
+}
+
+
+.topbar {
+	margin: 40px 0 20px 0;
+	display: flex; justify-content: space-between; align-items: center;
+}
+.today-box {
+	padding: 16px 20px; border: var(--line) solid 1px; border-radius: 16px;
+	background-color: rgba(255,255,255,.8);
+	text-align: right;
+}
+.today-box strong { font-size: 15px;}
+.today-label{
+	display: block; margin-bottom: 6px;
+	color: var(--muted); font-size: 10px; letter-spacing: 1.5px;
+}
+
+.focus-panel {
+	padding: 28px 32px;
+	background: linear-gradient(115deg, var(--green), #459b75);
+	border-radius: 22px;
+	display: flex; justify-content: space-between; align-items: center;
+	color: white;
+}
+
+.focus-panel .eyebrow { color: #c8ead8; }
+.focus-panel h2 { margin-bottom: 8px;}
+.focus-panel .subtitle {margin-bottom: 0; color: #e1f2e8; font-size: 14px;}
+
+.focus-mark{
+	display: grid; flex: 0 0 62px; width: 62px; height: 62px;
+	place-items: center;
+	border: rgba(255,255,255,.45) solid 1px; border-radius: 50%;
+	color: white; font-size: 30px;
+}
+
+.summary-grid{
+	margin: 18px 0;
+	display: grid; grid-template-columns: 1fr 1fr 2fr;
+	gap: 18px;
+}
+
+.summary-card {
+	padding: 20px; border: var(--line) solid 1px; border-radius: 20px;
+	background-color: var(--surface);
+}
+.summary-label{
+	display: block; margin-bottom: 9px; font-size: 13px; color: var(--muted);}
+.summary-unit { margin-left: 5px; font-size: 13px; color: var(--muted); }
+
+.progress-heading {
+	display: flex; justify-content: space-between; align-items: center;
+}
+.progress-text {
+	color: var(--green); font-size: 22px;
+}
+
+.progress-track {
+	height: 10px;
+	border-radius: 99px;
+	overflow: hidden;
+	background: #edf2ef;
+}
+.progress-fill{
+	width: 50%; height: 100%;
+	border-radius: inherit;
+	background-color: var(--green);
+	transition: width .25s ease;
+}
+
+.content-grid {
+	display: grid; grid-template-columns: 1.35fr 1fr;
+	gap: 18px;
+}
+.panel {
+	padding: 20px; border: var(--line) solid 1px; border-radius: 20px;
+	background-color: var(--surface);
+}
+
+.panel-heading {
+	margin-bottom: 20px;
+	display: flex; justify-content: space-between; align-items: center;
+	gap: 12px;
+}
+.panel-heading h2 { margin-bottom: 0; font-size: 21px; letter-spacing: -.7px;}
+.panel-heading .eyebrow { margin-bottom: 6px; }
+.small-chip{
+	background-color: var(--green-light);
+	padding: 7px 10px; border-radius: 100px;
+	font-size: 12px; color: var(--green); font-weight: 700;
+}
+
+.task-form {
+	display: flex; gap: 9px;}
+
+.task-form input, .memo-panel textarea {
+	width: 100%;
+	border: var(--line) 1px solid;
+	border-radius: 12px; outline: none;
+	background-color: #fbfdfb;
+	padding: 13px 14px;
+}
+.task-form input {
+	min-width: 0;
+}
+.primary-button {
+	padding: 0 17px;
+	border: 0; border-radius: 12px;
+	background: var(--green);
+	color: white; font-weight: 700; white-space: nowrap;
+}
+
+.filter-row { margin: 20px 0 16px 0; }
+.filter-button {
+	background-color: transparent;
+	border: 0; border-radius: 100px;
+	padding: 7px 12px;
+	color: var(--muted); font-size: 12px;
+}
+.active { background-color: var(--green-light); color: var(--green); font-weight: 800; }
+
+.task-list {
+	margin: 0; padding: 0;
+	display: grid; gap: 8px;
+	list-style: none;
+}
+.task-item {
+	padding: 12px;
+	display: flex; align-items: center; gap: 11px;
+	border: var(--line) 1px solid; border-radius: 12px;
+}
+.task-check {
+	width: 18px; height: 18px; accent-color: var(--green); cursor: pointer;
+}
+.task-title { flex: 1; overflow-wrap: anywhere; font-size: 14px;}
+.delete-button {
+	padding: 6px 9px; border: 0; border-radius: 8px;
+	background-color: #fff3f2; 
+	color: var(--danger); font-size: 12px;
+}
+
+.empty-message { padding: 22px 8px; color: var(--muted); text-align: center; font-size: 13px; }
+
+.memo-panel textarea {
+	display: block; min-height: 235px; padding: 14px; resize: vertical; line-height: 1.7;
+}
+.memo-icon {height: 32px; width: 32px; color: var(--green); font-size: 25px;}
+
+.memo-status { margin: 10px 2px; color: var(--muted); font-size: 11px;}
+
+footer {
+	padding: 28px 0 35px;
+	text-align: center; color: #9aa69f; font-size: 12px;
+}
