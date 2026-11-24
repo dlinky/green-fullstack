@@ -1,7 +1,98 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>나의 라이프 대시보드</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/app.js" defer></script>
 </head>
 <body>
+	<div class="page">
+		<header class="topbar">
+			<div class="title">
+				<p class="eyebrow">MY DAILY SPACE</p>
+				<h1>나의 라이프 대시보드</h1>
+				<p class="subtitle">오늘 해야 할 일을 차근차근 완성해 봐요.</p>
+			</div>
+			<div class="today-box">
+				<p class="eyebrow">TODAY</p>
+				<strong id="todayText" class="today-text">2026년 11월 24일 화요일</strong>
+			</div>
+		</header>
+		<main>
+			<section class="focus-panel">
+				<div>
+					<p class="eyebrow">TODAY'S FOCUS</p>
+					<h2>작은 한 걸음이 큰 변화를 만들어요.</h2>
+					<p class="subtitle">오늘의 할 일을 등록하고 하나씩 완료해 보세요.</p>
+				</div>
+				<div class="focus-mark">✓</div>
+			</section>
+			<section class="summary-grid">
+				<article class="summary-card">
+					<p class="summary-label">전체 할 일</p>
+					<strong id="totalCount">2</strong>
+					<span class="count-unit">개</span> 
+				</article>
+				<article class="summary-card">
+					<p class="summary-label">완료한 일</p>
+					<strong id="doneCount">1</strong>
+					<span class="count-unit">개</span> 					
+				</article>
+				<article class="summary-card progress-card">
+					<div class="progress-heading">
+						<span class="summary-label">오늘의 완료율</span>
+						<strong id="progressText" class="progress-text">50%</strong>						
+					</div>
+					<div class="progress-track" role="progressbar" id="progressBar">
+						<div id="progressFill" class="progress-fill" style="width:50%;"></div>
+					</div>
+				</article>
+			</section>
+			<div class="content-grid">
+				<section class="panel task-panel">
+					<div class="task-heading">
+						<div>
+							<p class="eyebrow">MY TASKS</p>
+							<h2>오늘의 할 일</h2>							
+						</div>
+						<span class="small-chip">하나씩 완료하기</span>						
+					</div>
+					<form id="taskForm" class="task-form">
+						<input id="taskInput" type="text" maxlength="100" class="task-input" placeholder="예: HTML 20분 공부하기" autocomplete="off">
+						<button type="submit">+ 추가하기</button>
+					</form>
+					<div class="filter-row">
+						<button type="button" class="filter-button active" data-filter="all">전체</button>
+						<button type="button" class="filter-button" data-filter="active">진행 중</button>
+						<button type="button" class="filter-button" data-filter="done">완료</button>
+					</div>
+					<ul id="taskList" class="task-list">
+						<li class="task-item">
+							<input type="checkbox" class="task-check">
+							<span class="task-title">asdf</span>
+							<button type="button" class="delete-button">삭제</button>
+						</li>
+					</ul>
+					<p id="emptyMessage" class="empty-message">아직 등록한 할 일이 없어요. 첫 번째 할 일을 추가해 보세요!</p>
+				</section>
+				<section class="panel memo-panel">
+					<div class="memo-heading">
+						<div>
+							<p class="eyebrow">MY MEMO</p>
+							<h2>오늘의 메모</h2>													
+						</div>
+						<span class="memo-icon">✎</span>						
+					</div>
+					<textarea id="memoInput" class="memo-input" placeholder="오늘 기억하고 싶은 일이나 생각을 자유롭게 적어 보세요."></textarea>
+					<p id="memoStatus" class="memo-status">이 브라우저에 자동 저장돼요.</p>
+				</section>
+			</div>
+		</main>
+		<footer>
+			<p class="footer-message">나의 라이프 대시보드 · 오늘도 잘하고 있어요!</p>
+		</footer>
+	</div>
 </body>
 </html>

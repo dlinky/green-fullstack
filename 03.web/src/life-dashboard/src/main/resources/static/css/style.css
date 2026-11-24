@@ -1,0 +1,193 @@
+:root {
+	--green: #287a5b;
+	--green-dark: #1f6047;
+	--green-light: #e8f4ee;
+	--ink: #24332d;
+	--muted: #78857f;
+	--line: #e5ece8;
+	--surface: #ffffff;
+	--background: #f4f8f5;
+	--danger: #c45454;
+	font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+p, h1, h2 { margin-top: 0;}
+
+h1 { margin-bottom: 8px; font-size: 40px; }
+h2 { margin-bottom: 8px; font-size: 26px;}
+
+button, input, textarea {
+	font: inherit;
+}
+
+button { cursor: pointer;  }
+
+.eyebrow {
+	margin: 0 0 9px;
+	color: var(--green); font-size: 11px; font-weight: 800; letter-spacing: 1.7px;
+}
+
+.subtitle {
+	margin-bottom: 0; color: var(--muted);
+}
+
+body {
+	background: radial-gradient(circle at 90% 0%, var(--green-light) 0, transparent 25rem), var(--background);
+	color: var(--ink);
+}
+
+.page {
+	width: min(1120px, calc(100% - 40px));
+	margin: 0 auto;
+}
+
+.topbar {
+	margin: 48px 0 30px;
+	display: flex; justify-content: space-between; align-items: center;
+}
+
+.today-box {
+	padding: 20px;
+	background-color: rgba(255,255,255,.8);
+	border: var(--line) 1px solid; border-radius: 26px;
+	text-align: right;
+}
+
+.focus-panel {
+	padding: 30px;
+	border: 0; border-radius: 24px;
+	background: linear-gradient(115deg, var(--green), var(--green));
+	display: flex; justify-content: space-between; align-items: center;
+}
+
+.focus-panel .eyebrow { color: var(--green-light); }
+
+.focus-panel h2 { color: white; }
+.focus-panel .subtitle { color: var(--green-light); font-size: 13px; }
+
+.focus-mark {
+	width: 62px; height: 62px; border: var(--line) 1px solid; border-radius: 999px;
+	display: grid; place-items: center;
+	color: white; font-size: 30px;
+}
+
+.summary-grid {
+	margin: 20px 0;
+	display: grid; grid-template-columns: 1fr 1fr 2fr; gap: 18px;
+}
+
+.summary-card {
+	height: 100%;
+	padding: 20px;
+	border: var(--line) 1px solid; border-radius: 20px;
+	background-color: var(--surface);
+}
+
+.summary-label { color: var(--muted); font-size: 13px; }
+.summary-card strong { font-size: 30px; }
+.count-unit { margin-left: 9px; font-size: 13px; }
+
+.progress-heading { display: flex; justify-content: space-between; }
+.progress-text { color: var(--green); font-size: 26px; font-weight: 700; }
+
+.progress-track {
+	height: 10px; overflow: hidden; border-radius: 999px;
+	background-color: var(--line);
+}
+
+.progress-fill { background-color: var(--green); height: 100%; border-radius: inherit; transition: width .25s ease; }
+
+.content-grid {
+	display: grid; grid-template-columns: 1.35fr 1fr; gap: 18px;
+}
+.content-grid h2 { font-size: 20px; }
+
+.panel {
+	padding: 20px; border: var(--line) 1px solid; border-radius: 16px;
+	background-color: var(--surface);
+}
+
+.task-heading { display: flex; justify-content: space-between; align-items: center; }
+
+.small-chip {
+	padding: 8px 10px; border: 0; border-radius: 99px;
+	text-align: center; color: var(--green); font-size: 13px; font-weight: 600;
+	background-color: var(--green-light);
+}
+
+.task-form {
+	margin: 20px 0;
+	display: flex; justify-content: space-between; gap: 10px;
+}
+
+.task-input, .memo-input {
+	width: 100%; border: 1px solid var(--line); border-radius: 12px; outline: none;
+	color: var(--ink); background: var(--green-light);
+} 
+
+.task-input {
+	min-width: 0; padding: 13px 14px;
+}
+
+.task-form button {
+	padding: 0 12px; border: 0; border-radius: 14px;
+	background-color: var(--green); color: white; font-size: 15px; font-weight: 600; white-space: nowrap;
+}
+
+.filter-button {
+	padding: 8px 12px;
+	border: 0; border-radius: 99px;
+	background-color: transparent;
+	color: var(--muted); font-size: 13px;
+}
+
+.active {
+	background-color: var(--green-light);
+	color: var(--green); font-weight: 600;
+}
+.task-list { padding: 0; display: grid; gap: 10px; list-style: none; }
+.task-item {
+	width: 100%; margin-left: 0; padding: 12px; border: var(--line) 1px solid; border-radius: 12px;
+	display: flex; justify-content: space-between; align-items: center; gap: 10px;
+}
+
+.task-check { width: 18px; height: 18px; accent-color: var(--green); cursor: pointer; }
+.task-title { flex: 1; font-size: 14px;}
+.delete-button {
+	padding: 8px 10px;
+	border: 0; border-radius: 12px;
+	font-size: 13px; color: var(--danger);
+	background-color: #fff3f2;
+}
+.empty-message {
+	color: var(--muted); font-size: 13px; text-align: center;
+}
+
+.memo-heading {
+	margin-bottom: 20px;
+	display: flex; justify-content: space-between; align-items: center;
+}
+
+.memo-icon {
+	color: var(--green); font-size: 30px;
+}
+
+.memo-input {
+	display: block;
+	min-height: 235px;
+	padding: 14px;
+	resize: horizontal;
+	line-height: 1.7;
+}
+
+.memo-status {
+	margin: 8px 0 0 5px;
+	color: var(--muted); font-size: 12px;
+}
+
+footer p {
+	margin-top: 20px;
+	color: var(--muted); font-size: 13px; text-align: center;
+}
