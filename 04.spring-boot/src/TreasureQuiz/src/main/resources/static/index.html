@@ -4,37 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🏝️보물섬 퀴즈 탐험🏕️</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 24px;
-            background: #f7f3e8;
-        }
-        .treasures {
-            display: flex; gap: 18px;
-        }
-
-        .treasure {
-            width: 240px;
-            height: 160px;
-            background-color: #f6c445;
-            border: 5px solid #8b4513;
-            border-radius: 40px;
-            text-align: center;
-            line-height: 160px;
-            font-size: 24px;
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="game.js" defer></script>
 </head>
 <body>
-    <h1>🏝️보물섬 퀴즈 탐험🏕️</h1>
+    <header class="game-header">
+        <h1>🏝️보물섬 퀴즈 탐험🏕️</h1>
+        <div class="score-panel">
+            <div class="score-badge">⭐ 점수 <span id="score">0</span>점</div>
+            <p class="progress-text">완료한 문제: <span id="solvedCount">0</span> / 9</p>
+        </div>
+    </header>
 
-    <div class="treasures">
-        <div class="treasure">💎 보석</div>
-        <div class="treasure">🪙 황금</div>
-        <div class="treasure">📜 보물지도</div>
-    </div>
+    
 
+    <section class="question-panel">
+        <h2>🧩 오늘의 퀴즈</h2>
+        <p id="questionText">보물상자를 선택해 문제를 시작해!</p>
+        <div id="choices" class="choices"></div>
+        <p id="feedback"></p>
+    </section>
+
+    <main class="quiz-grid">
+        <button class="treasure-card special" data-index="0">🎁 보물 1</button>
+        <button class="treasure-card" data-index="1">🎁 보물 2</button>
+        <button class="treasure-card" data-index="2">🎁 보물 3</button>
+        <button class="treasure-card" data-index="3">🎁 보물 4</button>
+        <button class="treasure-card" data-index="4">🎁 보물 5</button>
+        <button class="treasure-card" data-index="5">🎁 보물 6</button>
+        <button class="treasure-card" data-index="6">🎁 보물 7</button>
+        <button class="treasure-card" data-index="7">🎁 보물 8</button>
+        <button class="treasure-card" data-index="8">🎁 보물 9</button>
+    </main>
 </body>
 </html>

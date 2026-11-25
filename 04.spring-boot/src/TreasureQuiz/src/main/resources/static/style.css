@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+}
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+.score-badge {
+    text-align: right;
+}
+
+.progress-text {
+    margin: 3px 0;
+    text-align: right;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 24px;
+    background: #f7f3e8;
+}
+
+
+.question-panel {
+    text-align: center;
+}
+
+.choices {
+    display: flex; gap: 10px; justify-content: center;
+}
+
+.choice-button {
+    padding: 10px;
+    background-color: #b7e8c5;
+    border: 2px solid #32a852;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.choice-correct {
+    background-color: #ffdf70;
+    border-color: #f2c730;
+}
+.choice-wrong {
+    background-color: #f0c0b6;
+    border-color: #eb3510;
+}
+.choice-disabled {
+    background-color: #e3e1e1;
+    border-color: #a8a7a7;
+}
+
+.quiz-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    grid-auto-rows: 130px;
+}
+
+.treasure-card {
+    min-height: 110px;
+    border: 3px solid #8b4513;
+    border-radius: 16px;
+    background: #f6c445;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.treasure-card.special {
+    grid-column: span 2;
+    background: #ffdf70;
+    border-color: #c48612;
+}
