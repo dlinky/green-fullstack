@@ -1,0 +1,18 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 40px 20px;
+    font-family: Arial, san-serif;
+    background: #f2f5f9;
+    color: #243247;
+}
+
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}

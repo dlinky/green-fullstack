@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>처음 만나는 스프링 부트</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script defer th:src="@{js/app.js}"></script>
 </head>
 <body>
-    <main>
+    <main class="container">
         <h1>처음 만나는 스프링 부트</h1>
-        <p>나의 첫 번째 스프링 부트 웹페이지입니다.</p>
+        <p>HTML, CSS, JavaScript를 연결해 봅시다.</p>
+        <button id="messageButton" type="button">안내 보기</button>
+        <p id="message" aria-live="polite">버튼을 눌러 보세요.</p>
     </main>
 </body>
 </html>
