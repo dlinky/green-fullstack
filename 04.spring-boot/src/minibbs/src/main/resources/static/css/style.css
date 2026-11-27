@@ -1,0 +1,40 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0; padding: 40px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f5f9;
+    color: #243247;
+}
+
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+h1 {
+    color: #1769aa;
+}
+
+button {
+    padding: 10px 18px;
+    border: 0; border-radius: 8px;
+    background-color: #1769aa;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0f4f83;
+}
+
+#message {
+    margin-top: 20px;
+    padding: 14px;
+    background-color: #eef6fc;
+    border-radius: 8px;
+}
